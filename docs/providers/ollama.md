@@ -78,12 +78,12 @@ openclaw onboard
 
 - `Local`: local models only
 - `Cloud + Local`: local models plus cloud models
-- Cloud models such as `kimi-k2.5:cloud`, `minimax-m2.5:cloud`, and `glm-5:cloud` do **not** require a local `ollama pull`
+- Cloud models such as `kimi-k2.5:cloud`, `minimax-m2.7:cloud`, and `glm-5:cloud` do **not** require a local `ollama pull`
 
 OpenClaw currently suggests:
 
 - local default: `glm-4.7-flash`
-- cloud defaults: `kimi-k2.5:cloud`, `minimax-m2.5:cloud`, `glm-5:cloud`
+- cloud defaults: `kimi-k2.5:cloud`, `minimax-m2.7:cloud`, `glm-5:cloud`
 
 5. If you prefer manual setup, enable Ollama for OpenClaw directly (any value works; Ollama doesn't require a real key):
 
@@ -229,7 +229,7 @@ Once configured, all your Ollama models are available:
 
 ## Cloud models
 
-Cloud models let you run cloud-hosted models (for example `kimi-k2.5:cloud`, `minimax-m2.5:cloud`, `glm-5:cloud`) alongside your local models.
+Cloud models let you run cloud-hosted models (for example `kimi-k2.5:cloud`, `minimax-m2.7:cloud`, `glm-5:cloud`) alongside your local models.
 
 To use cloud models, select **Cloud + Local** mode during setup. The wizard checks whether you are signed in and opens a browser sign-in flow when needed. If authentication cannot be verified, the wizard falls back to local model defaults.
 

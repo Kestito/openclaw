@@ -53,7 +53,7 @@ openclaw onboard --opencode-go-api-key "$OPENCODE_API_KEY"
 ### Go
 
 - Runtime provider: `opencode-go`
-- Example models: `opencode-go/kimi-k2.5`, `opencode-go/glm-5`, `opencode-go/minimax-m2.5`
+- Example models: `opencode-go/kimi-k2.5`, `opencode-go/glm-5`, `opencode-go/minimax-m2.7`
 - Best when you want the OpenCode-hosted Kimi/GLM/MiniMax lineup
 
 ## Notes

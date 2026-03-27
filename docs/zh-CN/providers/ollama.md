@@ -85,12 +85,12 @@ openclaw onboard
 
 - `Local`：仅本地模型
 - `Cloud + Local`：本地模型加云端模型
-- 云端模型如 `kimi-k2.5:cloud`、`minimax-m2.5:cloud` 和 `glm-5:cloud` **不需要** 本地执行 `ollama pull`
+- 云端模型如 `kimi-k2.5:cloud`、`minimax-m2.7:cloud` 和 `glm-5:cloud` **不需要** 本地执行 `ollama pull`
 
 OpenClaw 当前建议：
 
 - 本地默认：`glm-4.7-flash`
-- 云端默认：`kimi-k2.5:cloud`、`minimax-m2.5:cloud`、`glm-5:cloud`
+- 云端默认：`kimi-k2.5:cloud`、`minimax-m2.7:cloud`、`glm-5:cloud`
 
 5. 如果你更喜欢手动设置，也可以直接为 OpenClaw 启用 Ollama（任意值都可以；Ollama 不需要真实 key）：
 
@@ -236,7 +236,7 @@ export OLLAMA_API_KEY="ollama-local"
 
 ## 云端模型
 
-云端模型让你可以将云托管模型（例如 `kimi-k2.5:cloud`、`minimax-m2.5:cloud`、`glm-5:cloud`）与本地模型一起使用。
+云端模型让你可以将云托管模型（例如 `kimi-k2.5:cloud`、`minimax-m2.7:cloud`、`glm-5:cloud`）与本地模型一起使用。
 
 要使用云端模型，请在设置期间选择 **Cloud + Local** 模式。向导会检查你是否已登录，并在需要时打开浏览器登录流程。如果无法验证认证状态，向导会回退到本地模型默认值。
 

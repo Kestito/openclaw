@@ -44,6 +44,9 @@ apps/macos/.build
 apps/ios/build
 **/*.trace
 
+# incomplete extensions (no manifest yet)
+extensions/minimax-portal-auth
+
 # large app trees not needed for CLI build
 apps/
 assets/

@@ -1,0 +1,11 @@
+{
+  "name": "order-pdf",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "imap": "^0.8.19",
+    "mailparser": "^3.7.2",
+    "pdf-parse": "^1.1.1",
+    "pdfkit": "^0.16.0"
+  }
+}

@@ -140,8 +140,8 @@ Configure manually via `openclaw.json`:
 {
   agents: {
     defaults: {
-      model: { primary: "lmstudio/minimax-m2.5-gs32" },
-      models: { "lmstudio/minimax-m2.5-gs32": { alias: "Minimax" } },
+      model: { primary: "lmstudio/minimax-m2.7-gs32" },
+      models: { "lmstudio/minimax-m2.7-gs32": { alias: "Minimax" } },
     },
   },
   models: {
@@ -153,7 +153,7 @@ Configure manually via `openclaw.json`:
         api: "openai-responses",
         models: [
           {
-            id: "minimax-m2.5-gs32",
+            id: "minimax-m2.7-gs32",
             name: "MiniMax M2.5 GS32",
             reasoning: true,
             input: ["text"],

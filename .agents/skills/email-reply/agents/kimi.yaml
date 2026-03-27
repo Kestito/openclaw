@@ -1,0 +1,6 @@
+interface:
+  display_name: "Email Reply (LT)"
+  short_description: "Draft professional email responses in Lithuanian"
+  default_prompt: "Use $email-reply to draft a Lithuanian email response."
+  model: kimi-2
+  provider: moonshot

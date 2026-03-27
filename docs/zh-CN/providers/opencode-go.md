@@ -23,7 +23,7 @@ OpenCode Go 是 [OpenCode](/providers/opencode) 中的 Go 目录。
 
 - `opencode-go/kimi-k2.5`
 - `opencode-go/glm-5`
-- `opencode-go/minimax-m2.5`
+- `opencode-go/minimax-m2.7`
 
 ## CLI 设置
 

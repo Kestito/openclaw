@@ -21,10 +21,10 @@ Best current local stack. Load MiniMax M2.5 in LM Studio, enable the local serve
 {
   agents: {
     defaults: {
-      model: { primary: "lmstudio/minimax-m2.5-gs32" },
+      model: { primary: "lmstudio/minimax-m2.7-gs32" },
       models: {
         "anthropic/claude-opus-4-6": { alias: "Opus" },
-        "lmstudio/minimax-m2.5-gs32": { alias: "Minimax" },
+        "lmstudio/minimax-m2.7-gs32": { alias: "Minimax" },
       },
     },
   },
@@ -37,7 +37,7 @@ Best current local stack. Load MiniMax M2.5 in LM Studio, enable the local serve
         api: "openai-responses",
         models: [
           {
-            id: "minimax-m2.5-gs32",
+            id: "minimax-m2.7-gs32",
             name: "MiniMax M2.5 GS32",
             reasoning: false,
             input: ["text"],
@@ -70,11 +70,11 @@ Keep hosted models configured even when running local; use `models.mode: "merge"
     defaults: {
       model: {
         primary: "anthropic/claude-sonnet-4-6",
-        fallbacks: ["lmstudio/minimax-m2.5-gs32", "anthropic/claude-opus-4-6"],
+        fallbacks: ["lmstudio/minimax-m2.7-gs32", "anthropic/claude-opus-4-6"],
       },
       models: {
         "anthropic/claude-sonnet-4-6": { alias: "Sonnet" },
-        "lmstudio/minimax-m2.5-gs32": { alias: "MiniMax Local" },
+        "lmstudio/minimax-m2.7-gs32": { alias: "MiniMax Local" },
         "anthropic/claude-opus-4-6": { alias: "Opus" },
       },
     },
@@ -88,7 +88,7 @@ Keep hosted models configured even when running local; use `models.mode: "merge"
         api: "openai-responses",
         models: [
           {
-            id: "minimax-m2.5-gs32",
+            id: "minimax-m2.7-gs32",
             name: "MiniMax M2.5 GS32",
             reasoning: false,
             input: ["text"],

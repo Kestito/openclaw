@@ -18,7 +18,7 @@ export { OLLAMA_DEFAULT_BASE_URL } from "../agents/ollama-defaults.js";
 export const OLLAMA_DEFAULT_MODEL = "glm-4.7-flash";
 
 const OLLAMA_SUGGESTED_MODELS_LOCAL = ["glm-4.7-flash"];
-const OLLAMA_SUGGESTED_MODELS_CLOUD = ["kimi-k2.5:cloud", "minimax-m2.5:cloud", "glm-5:cloud"];
+const OLLAMA_SUGGESTED_MODELS_CLOUD = ["kimi-k2.5:cloud", "minimax-m2.7:cloud", "glm-5:cloud"];
 type OllamaMode = "remote" | "local";
 type OllamaSetupOptions = ProviderAuthOptionBag & {
   customBaseUrl?: string;

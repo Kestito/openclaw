@@ -1,5 +1,6 @@
 services:
-  openclaw-gateway:
+  OpenClaw12:
+    container_name: OpenClaw12
     image: ${OPENCLAW_IMAGE:-openclaw:local}
     environment:
       HOME: /home/node
@@ -10,17 +11,22 @@ services:
       CLAUDE_WEB_SESSION_KEY: ${CLAUDE_WEB_SESSION_KEY:-}
       CLAUDE_WEB_COOKIE: ${CLAUDE_WEB_COOKIE:-}
       TZ: ${OPENCLAW_TZ:-UTC}
+      MOONSHOT_API_KEY: ${MOONSHOT_API_KEY}
+      WOO_KEY: ${WOO_KEY}
+      WOO_SECRET: ${WOO_SECRET}
+      EMAIL_ADDRESS: ${EMAIL_ADDRESS}
+      EMAIL_PASSWORD: ${EMAIL_PASSWORD}
+      IMAP_SERVER: ${IMAP_SERVER:-imap.gmail.com}
     volumes:
       - ${OPENCLAW_CONFIG_DIR}:/home/node/.openclaw
       - ${OPENCLAW_WORKSPACE_DIR}:/home/node/.openclaw/workspace
-      ## Uncomment the lines below to enable sandbox isolation
-      ## (agents.defaults.sandbox). Requires Docker CLI in the image
-      ## (build with --build-arg OPENCLAW_INSTALL_DOCKER_CLI=1) or use
-      ## scripts/docker/setup.sh with OPENCLAW_SANDBOX=1 for automated setup.
-      ## Set DOCKER_GID to the host's docker group GID (run: stat -c '%g' /var/run/docker.sock).
-      # - /var/run/docker.sock:/var/run/docker.sock
-    # group_add:
-    #   - "${DOCKER_GID:-999}"
+      - ${MCPORTER_CONFIG_DIR:-~/.mcporter}:/home/node/.mcporter
+      - /var/run/docker.sock:/var/run/docker.sock
+      - C:/Users/kestu/Documents/GitHub/Caller:/workspace/axiocall
+      - C:/Users/kestu/Documents/GitHub/Agentas:/workspace/argothos
+      - C:/Users/kestu/Documents/GitHub/KardioAI:/workspace/kardioai
+      - C:/Users/kestu/Documents/GitHub/openclaw:/workspace/openclaw
+      - C:/Users/kestu/LiutiSEO:/workspace/liutiseo
     ports:
       - "${OPENCLAW_GATEWAY_PORT:-18789}:18789"
       - "${OPENCLAW_BRIDGE_PORT:-18790}:18790"
@@ -29,8 +35,9 @@ services:
     command:
       [
         "node",
-        "dist/index.js",
+        "openclaw.mjs",
         "gateway",
+        "--allow-unconfigured",
         "--bind",
         "${OPENCLAW_GATEWAY_BIND:-lan}",
         "--port",
@@ -51,7 +58,7 @@ services:
 
   openclaw-cli:
     image: ${OPENCLAW_IMAGE:-openclaw:local}
-    network_mode: "service:openclaw-gateway"
+    network_mode: "service:OpenClaw12"
     cap_drop:
       - NET_RAW
       - NET_ADMIN
@@ -75,4 +82,4 @@ services:
     init: true
     entrypoint: ["node", "dist/index.js"]
     depends_on:
-      - openclaw-gateway
+      - OpenClaw12

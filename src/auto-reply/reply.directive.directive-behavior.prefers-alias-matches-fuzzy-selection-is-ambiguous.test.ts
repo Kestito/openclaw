@@ -126,7 +126,7 @@ describe("directive behavior", () => {
                   "minimax/MiniMax-M2.7": {},
                   "minimax/MiniMax-M2.5": {},
                   "minimax/MiniMax-M2.5-highspeed": {},
-                  "lmstudio/minimax-m2.5-gs32": {},
+                  "lmstudio/minimax-m2.7-gs32": {},
                 },
               },
             },
@@ -146,7 +146,7 @@ describe("directive behavior", () => {
                   baseUrl: "http://127.0.0.1:1234/v1",
                   apiKey: "lmstudio", // pragma: allowlist secret
                   api: "openai-responses",
-                  models: [makeModelDefinition("minimax-m2.5-gs32", "MiniMax M2.5 GS32")],
+                  models: [makeModelDefinition("minimax-m2.7-gs32", "MiniMax M2.5 GS32")],
                 },
               },
             },

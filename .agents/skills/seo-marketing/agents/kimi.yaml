@@ -1,0 +1,6 @@
+interface:
+  display_name: "SEO Marketing (Kimi 2)"
+  short_description: "Audit and optimize content for search engines"
+  default_prompt: "Use $seo-marketing to audit pages, generate metadata, and improve search visibility."
+  model: kimi-2
+  provider: moonshot

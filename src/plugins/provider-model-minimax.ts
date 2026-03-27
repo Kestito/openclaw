@@ -30,7 +30,6 @@ export const MINIMAX_TEXT_MODEL_REFS = MINIMAX_TEXT_MODEL_ORDER.map(
 export const MINIMAX_MODERN_MODEL_MATCHERS = [
   "minimax-m2",
   "minimax-m2.1",
-  "minimax-m2.5",
   "minimax-m2.7",
 ] as const;
 

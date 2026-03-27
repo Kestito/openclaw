@@ -139,12 +139,12 @@ function createOAuthHandler(region: MiniMaxRegion) {
                 [portalModelRef("MiniMax-M2.7-highspeed")]: {
                   alias: "minimax-m2.7-highspeed",
                 },
-                [portalModelRef("MiniMax-M2.5")]: { alias: "minimax-m2.5" },
+                [portalModelRef("MiniMax-M2.5")]: { alias: "minimax-m2.7" },
                 [portalModelRef("MiniMax-M2.5-highspeed")]: {
-                  alias: "minimax-m2.5-highspeed",
+                  alias: "minimax-m2.7-highspeed",
                 },
                 [portalModelRef("MiniMax-M2.5-Lightning")]: {
-                  alias: "minimax-m2.5-lightning",
+                  alias: "minimax-m2.7-lightning",
                 },
               },
             },

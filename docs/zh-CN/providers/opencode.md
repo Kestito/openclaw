@@ -60,7 +60,7 @@ openclaw onboard --opencode-go-api-key "$OPENCODE_API_KEY"
 ### Go
 
 - 运行时提供商：`opencode-go`
-- 示例模型：`opencode-go/kimi-k2.5`、`opencode-go/glm-5`、`opencode-go/minimax-m2.5`
+- 示例模型：`opencode-go/kimi-k2.5`、`opencode-go/glm-5`、`opencode-go/minimax-m2.7`
 - 适合你想使用 OpenCode 托管的 Kimi/GLM/MiniMax 产品线时
 
 ## 说明

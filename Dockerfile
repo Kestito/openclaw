@@ -237,10 +237,29 @@ RUN ln -sf /app/openclaw.mjs /usr/local/bin/openclaw \
 
 ENV NODE_ENV=production
 
-# Security hardening: Run as non-root user
-# The node:24-bookworm image includes a 'node' user (uid 1000)
-# This reduces the attack surface by preventing container escape via root privileges
-USER node
+# Install mcporter for MCP server access (WooCommerce, etc.)
+RUN npm install -g mcporter
+
+# Install seomator CLI for SEO site audits (251 rules, Core Web Vitals)
+RUN npm install -g @seomator/seo-audit
+
+# Allow non-root user to write temp files during runtime/tests.
+RUN chown -R node:node /app
+
+# Install gosu for dropping privileges in entrypoint
+RUN apt-get update && apt-get install -y --no-install-recommends gosu cron \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install invoice script dependencies and copy scripts into the image.
+COPY skills/order-pdf/scripts /app/invoice-scripts
+RUN cd /app/invoice-scripts && npm init -y && npm install imap mailparser nodemailer pdf-parse pdfkit \
+    && chown -R node:node /app/invoice-scripts
+
+# Entrypoint ensures mounted volumes have correct ownership,
+# then drops to the node user via gosu.
+COPY scripts/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Start gateway server with default config.
 # Binds to loopback (127.0.0.1) by default for security.

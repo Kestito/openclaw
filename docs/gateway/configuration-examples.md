@@ -617,7 +617,7 @@ terms before depending on subscription auth.
 {
   agent: {
     workspace: "~/.openclaw/workspace",
-    model: { primary: "lmstudio/minimax-m2.5-gs32" },
+    model: { primary: "lmstudio/minimax-m2.7-gs32" },
   },
   models: {
     mode: "merge",
@@ -628,7 +628,7 @@ terms before depending on subscription auth.
         api: "openai-responses",
         models: [
           {
-            id: "minimax-m2.5-gs32",
+            id: "minimax-m2.7-gs32",
             name: "MiniMax M2.5 GS32",
             reasoning: false,
             input: ["text"],
